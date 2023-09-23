@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using ETicaretAPI.Persistence.Repositories;
 using ETicaretAPI.Application.Repositories;
+using ETicaretAPI.Application.Repositories.File;
+using ETicaretAPI.Persistence.Repositories.File;
 
 namespace ETicaretAPI.Persistence
 {
@@ -23,6 +25,13 @@ namespace ETicaretAPI.Persistence
             services.AddScoped<IOrderWriteRepository, OrderWriteRepository>();
             services.AddScoped<ICustomerReadRepository, CustomerReadRepository>();
             services.AddScoped<ICustomerWriteRepository, CustomerWriteRepository>();
+            services.AddScoped<IFileWriteRepository, FileWriteRepository>();
+            services.AddScoped<IFileReadRepository, FileReadRepository>();
+            services.AddScoped<IProductImageFileWriteRepository, ProductImageFileWriteRepository>();
+            services.AddScoped<IProductImageFileReadRepository, ProductImageFileReadRepository>();
+            services.AddScoped<IInvoiceFileWriteRepository, InvoiceFileWriteRepository>();
+            services.AddScoped<IInvoiceFileReadRepository, InvoiceFileReadRepository>();
+
         }
     }
 }
